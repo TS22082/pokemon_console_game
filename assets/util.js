@@ -4,7 +4,7 @@ wasHit = (attacked, attacker) => {
   console.log(`${attacked.name} was hit! remaining health: ${attacked.hp}\n`);
 };
 
-ssuperEffective = (attacked, attacker) => {
+superEffective = (attacked, attacker) => {
   attacked.hp -= 5;
   wasHit(attacked, attacker);
   console.log("its super effective!!!\n\n");

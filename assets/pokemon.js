@@ -1,23 +1,30 @@
 const lib = require("./util");
 
 function Pokemon(name) {
-  if (name === "Squirtle") {
-    this.name = "Squirtle";
-    this.type = "water";
-    this.hp = 20;
-    this.att = 5;
-  }
-  if (name === "Charmander") {
-    this.name = "Charmander";
-    this.type = "fire";
-    this.hp = 20;
-    this.att = 5;
-  }
-  if (name === "Bulbasaur") {
-    this.name = "Bulbasaur";
-    this.type = "grass";
-    this.hp = 20;
-    this.att = 5;
+  switch (name) {
+    case "Squirtle":
+      this.name = "Squirtle";
+      this.type = "water";
+      this.hp = 20;
+      this.att = 5;
+      break;
+
+    case "Charmander":
+      this.name = "Charmander";
+      this.type = "fire";
+      this.hp = 20;
+      this.att = 5;
+      break;
+
+    case "Bulbasaur":
+      this.name = "Bulbasaur";
+      this.type = "grass";
+      this.hp = 20;
+      this.att = 5;
+      break;
+
+    default:
+      break;
   }
 }
 
