@@ -33,4 +33,9 @@ Trainer.prototype.switchPokemon = function(poke) {
   });
 };
 
+Trainer.prototype.readyForBattle = function() {
+  this.currentPokemon = this.pokemon[0];
+  this.pokemon.splice(0, 1);
+};
+
 module.exports = Trainer;
