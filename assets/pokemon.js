@@ -21,7 +21,7 @@ function Pokemon(name) {
 
 Pokemon.prototype.attack = function(poke) {
   poke.hp -= this.att;
-  console.log(`${poke.name} was hit! remaining health: ${poke.hp}`);
+  console.log(`\n\n${poke.name} was hit! remaining health: ${poke.hp}\n\n`);
 };
 
 module.exports = Pokemon;
