@@ -1,8 +1,8 @@
 const inquirer = require("inquirer");
+const lib = require("./assets/util");
 const Trainer = require("./assets/trainer");
-const Pokemon = require("./assets/pokemon");
 
-const battle = (player, attacker) => {
+battle = (player, attacker) => {
   inquirer
     .prompt({
       type: "list",
@@ -38,22 +38,7 @@ const battle = (player, attacker) => {
     });
 };
 
-const ambush = player => {
-  const wildPokemon = [
-    new Pokemon("Bulbasaur"),
-    new Pokemon("Squirtle"),
-    new Pokemon("Charmander")
-  ];
-
-  const attackingPoke = wildPokemon[Math.floor(Math.random() * 2)];
-
-  console.log(
-    `\n\n!!! You are being attacked by ${attackingPoke.name} !!! \n\n`
-  );
-  battle(player, attackingPoke);
-};
-
-const game = () => {
+game = () => {
   inquirer
     .prompt([
       {
@@ -65,11 +50,11 @@ const game = () => {
     .then(res => {
       const Player1 = new Trainer("Thomas");
       Player1.readyForBattle();
-      ambush(Player1);
+      lib.ambush(Player1);
     });
 };
 
-const mainMenu = () => {
+mainMenu = () => {
   inquirer
     .prompt([
       {

@@ -1,3 +1,5 @@
+const Pokemon = require("./pokemon");
+
 wasHit = (attacked, attacker) => {
   attacked.hp -= attacker.att;
   console.log(`\n\n${attacker.name} attacked!!!\n`);
@@ -10,7 +12,23 @@ superEffective = (attacked, attacker) => {
   wasHit(attacked, attacker);
 };
 
+ambush = player => {
+  const wildPokemon = [
+    new Pokemon("Bulbasaur"),
+    new Pokemon("Squirtle"),
+    new Pokemon("Charmander")
+  ];
+
+  const attackingPoke = wildPokemon[Math.floor(Math.random() * 2)];
+
+  console.log(
+    `\n\n!!! You are being attacked by ${attackingPoke.name} !!! \n\n`
+  );
+  battle(player, attackingPoke);
+};
+
 module.exports = {
   wasHit: wasHit,
-  superEffective: superEffective
+  superEffective: superEffective,
+  ambush: ambush
 };
