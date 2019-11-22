@@ -25,16 +25,13 @@ const battle = (player, attacker) => {
             battle(player, attacker);
           });
       } else {
-        console.log("You attacked!!!");
         player.currentPokemon.attack(attacker);
 
         if (attacker.hp > 0) {
           attacker.attack(player.currentPokemon);
           battle(player, attacker);
         } else {
-          console.log("#####################################");
           console.log(`\n\nenemy ${attacker.name} got bored and left\n\n`);
-          console.log("#####################################");
           mainMenu();
         }
       }
