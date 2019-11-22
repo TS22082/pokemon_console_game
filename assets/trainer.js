@@ -33,6 +33,4 @@ Trainer.prototype.switchPokemon = function(poke) {
   });
 };
 
-const Thomas = new Trainer("Thomas");
-
 module.exports = Trainer;
