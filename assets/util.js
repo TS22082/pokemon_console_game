@@ -7,7 +7,7 @@ wasHit = (attacked, attacker) => {
 superEffective = (attacked, attacker) => {
   attacked.hp -= 5;
   wasHit(attacked, attacker);
-  console.log("its super effective!!!\n\n");
+  console.log("its super effective!!!\n");
 };
 
 module.exports = {

@@ -2,15 +2,20 @@ const inquirer = require("inquirer");
 const Trainer = require("./assets/trainer");
 const Pokemon = require("./assets/pokemon");
 
+coderMagic = player => {
+  if (player.currentPokemon.hp <= 0) {
+    return ["switch pokemon"];
+  } else {
+    return [`attack (with ${player.currentPokemon.name})`, "switch pokemon"];
+  }
+};
+
 battle = (player, attacker) => {
   inquirer
     .prompt({
       type: "list",
       message: "What would you like to do?",
-      choices: [
-        `attack (with ${player.currentPokemon.name})`,
-        "switch pokemon"
-      ],
+      choices: coderMagic(player),
       name: "battlechoice"
     })
     .then(res => {
